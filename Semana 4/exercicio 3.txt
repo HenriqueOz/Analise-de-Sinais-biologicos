@@ -1,0 +1,23 @@
+Aula 3: Revise o assunto convolução.
+
+
+
+Exercício 3: Verifique se um filtro média móvel é suficiente para filtrar o seguinte ECG (anexo).
+
+Faça uma função plotFFT(x,Fs) que plot a FFT com a escala correta dependendo da Frequência de amostragem Fs.
+
+Plot o ECG e a FFF e analise a causa do ruído.
+
+Plot as FFTs antes e depois de aplicar os filtros.
+
+Os filtros devem ser feitos através da convolução: y = conv(x,h);
+
+Exemplo de h para a média móvel: ordem 3: h=[1/3, 1/3, 1/3]; ou  h=[1 1 1]/3; ou n=3; h=ones(1,n)/n, explique porque a convolução realiza a média (nesse caso).
+
+A frequência de amostragem do ecg é de 200Hz.
+
+
+
+att,
+
+Arlindo 

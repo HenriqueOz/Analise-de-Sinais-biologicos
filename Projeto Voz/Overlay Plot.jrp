@@ -1,0 +1,234 @@
+﻿New Table( "results",
+	Add Rows( 50 ),
+	New Script(
+		"Source",
+		Open(
+			"D:\OneDrive\Documentos\Mestrado UFSCar\Analise-de-Sinais-biologicos\Projeto Voz\results.csv",
+			columns(
+				New Column( "arquivo", Character, "Nominal" ),
+				New Column( "vogal", Character, "Nominal" ),
+				New Column( "formante",
+					Numeric,
+					"Continuous",
+					Format( "Best", 12 )
+				),
+				New Column( "idx", Numeric, "Continuous", Format( "Best", 12 ) ),
+				New Column( "n", Numeric, "Continuous", Format( "Best", 12 ) )
+			),
+			Import Settings(
+				End Of Line( CRLF, CR, LF ),
+				End Of Field( Comma, CSV( 1 ) ),
+				Strip Quotes( 0 ),
+				Use Apostrophe as Quotation Mark( 0 ),
+				Use Regional Settings( 0 ),
+				Scan Whole File( 1 ),
+				Treat empty columns as numeric( 0 ),
+				CompressNumericColumns( 0 ),
+				CompressCharacterColumns( 0 ),
+				CompressAllowListCheck( 0 ),
+				Labels( 1 ),
+				Column Names Start( 1 ),
+				Data Starts( 2 ),
+				Lines To Read( "All" ),
+				Year Rule( "20xx" )
+			)
+		)
+	),
+	New Column( "arquivo",
+		Character,
+		"Nominal",
+		Set Values(
+			{"hos_vogal_a", "hos_vogal_a", "hos_vogal_a", "hos_vogal_a_2",
+			"hos_vogal_a_2", "hos_vogal_e", "hos_vogal_e", "hos_vogal_e",
+			"hos_vogal_e", "hos_vogal_e_2", "hos_vogal_e_2", "hos_vogal_e_2",
+			"hos_vogal_i", "hos_vogal_i", "hos_vogal_i", "hos_vogal_i",
+			"hos_vogal_i_2", "hos_vogal_i_2", "hos_vogal_i_2", "hos_vogal_i_2",
+			"hos_vogal_o", "hos_vogal_o", "hos_vogal_o", "hos_vogal_o",
+			"hos_vogal_o_2", "hos_vogal_o_2", "hos_vogal_o_2", "hos_vogal_o_2",
+			"hos_vogal_u", "hos_vogal_u", "hos_vogal_u_2", "hos_vogal_u_2",
+			"hos_vogal_u_2", "LFBA_Volgal_A", "LFBA_Volgal_A", "LFBA_Volgal_E",
+			"LFBA_Volgal_E", "LFBA_Volgal_E", "LFBA_Volgal_E", "LFBA_Volgal_E",
+			"LFBA_Volgal_I", "LFBA_Volgal_I", "LFBA_Volgal_I", "LFBA_Volgal_I",
+			"LFBA_Volgal_O", "LFBA_Volgal_O", "LFBA_Volgal_O", "LFBA_Volgal_U",
+			"LFBA_Volgal_U", "LFBA_Volgal_U"}
+		)
+	),
+	New Column( "vogal",
+		Character,
+		"Nominal",
+		Set Values(
+			{"a", "a", "a", "a", "a", "e", "e", "e", "e", "e", "e", "e", "i", "i",
+			"i", "i", "i", "i", "i", "i", "o", "o", "o", "o", "o", "o", "o", "o",
+			"u", "u", "u", "u", "u", "a", "a", "e", "e", "e", "e", "e", "i", "i",
+			"i", "i", "o", "o", "o", "u", "u", "u"}
+		)
+	),
+	New Column( "formante",
+		Numeric,
+		"Continuous",
+		Format( "Best", 12 ),
+		Set Selected,
+		Set Values(
+			[771.838362751859, 1225.77631358223, 2618.61987660994, 796.738133859934,
+			1272.3446646449, 609.506719609041, 1916.79520464264, 2365.38637751985,
+			3556.49816737935, 628.230910465493, 1949.4686251215, 4209.00421211794,
+			262.769977194473, 2361.23228099987, 2910.68282430801, 3714.52231364307,
+			300.260861005381, 2329.97604672529, 2895.04528153301, 3733.60513190707,
+			630.703671328671, 965.222902097902, 2692.85839160839, 3429.78583916084,
+			665.534345785018, 954.839405368535, 2687.79440677286, 3639.09491232998,
+			281.897273507943, 711.725525976814, 250.543008700195, 745.204846390323,
+			3459.7530591332, 617.433414043583, 5268.90756302521, 359.440985676346,
+			2014.01889503244, 2609.60424920545, 3717.70647394314, 5353.4764247464,
+			338.718594508262, 2149.14921063947, 4233.79814484919, 5413.2317709933,
+			532.11596057108, 2588.70053211596, 3372.04501177634, 351.114112086428,
+			726.92196392399, 3277.70811227935]
+		),
+		Set Display Width( 82 )
+	),
+	New Column( "idx",
+		Numeric,
+		"Continuous",
+		Format( "Best", 12 ),
+		Set Values(
+			[0, 1, 2, 0, 1, 0, 1, 2, 3, 0, 1, 2, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3,
+			0, 1, 2, 3, 0, 1, 0, 1, 2, 0, 1, 0, 1, 2, 3, 4, 0, 1, 2, 3, 0, 1, 2, 0,
+			1, 2]
+		)
+	),
+	New Column( "n",
+		Numeric,
+		"Continuous",
+		Format( "Best", 12 ),
+		Set Values(
+			[3, 3, 3, 2, 2, 4, 4, 4, 4, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+			4, 4, 4, 4, 2, 2, 3, 3, 3, 2, 2, 5, 5, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3,
+			3, 3]
+		)
+	),
+	Set Row States(
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	)
+) << Run Formulas;
+Overlay Plot(
+	SendToByGroup( {:vogal == "a"} ),
+	X( :idx ),
+	Y( :formante ),
+	Grouping( :arquivo ),
+	Overlay Groups,
+	SendToByGroup(
+		{:vogal == "a"},
+		Y Axis[1] << {{Min( 500 ), Max( 2750 ), Inc( 500 ), Minor Ticks( 1 ),
+		Add Ref Line( 781, "Dashed", "Red", "F1", 1 ),
+		Add Ref Line( 1183, "Dashed", "Red", "F2", 1 )}}
+	),
+	Connect Thru Missing( 1 ),
+	SendToByGroup(
+		{:vogal == "a"},
+		:formante( Connect Color( 4 ), Overlay Marker( 8 ) )
+	),
+	By( :vogal ),
+	SendToByGroup(
+		{:vogal == "a"},
+		SendToReport(
+			Dispatch(
+				{"Overlay Plot vogal=a"},
+				"106",
+				ScaleBox( 2 ),
+				{Min( 500 ), Max( 2750 ), Inc( 500 ), Minor Ticks( 1 ),
+				Add Ref Line( 781, "Dashed", "Red", "F1", 1 ),
+				Add Ref Line( 1183, "Dashed", "Red", "F2", 1 )}
+			),
+			Dispatch(
+				{"Overlay Plot vogal=a"},
+				"Overlay Plot Graph",
+				FrameBox( 4 ),
+				{Frame Size( 477, 281 )}
+			),
+			Dispatch(
+				{"Overlay Plot vogal=a"},
+				"",
+				AxisBox( 12 ),
+				{Add Axis Label( "Indice" )}
+			),
+			Dispatch(
+				{"Overlay Plot vogal=a"},
+				"idx",
+				Text Edit Box( 2 ),
+				{Set Text( "Indice" )}
+			)
+		)
+	),
+	SendToByGroup(
+		{:vogal == "e"},
+		SendToReport(
+			Dispatch(
+				{"Overlay Plot vogal=e"},
+				"106",
+				ScaleBox( 2 ),
+				{Add Ref Line( 607, "Dashed", "Medium Dark Red", "F1", 1 ),
+				Add Ref Line( 1479, "Dashed", "Medium Dark Red", "F2", 1 )}
+			),
+			Dispatch(
+				{"Overlay Plot vogal=e"},
+				"Overlay Plot Graph",
+				FrameBox( 4 ),
+				{Frame Size( 477, 281 )}
+			)
+		)
+	),
+	SendToByGroup(
+		{:vogal == "i"},
+		SendToReport(
+			Dispatch(
+				{"Overlay Plot vogal=i"},
+				"106",
+				ScaleBox( 2 ),
+				{Add Ref Line( 344, "Dashed", "Red", "F1", 1 ),
+				Add Ref Line( 1695, "Dashed", "Red", "F2", 1 )}
+			),
+			Dispatch(
+				{"Overlay Plot vogal=i"},
+				"Overlay Plot Graph",
+				FrameBox( 4 ),
+				{Frame Size( 477, 281 )}
+			)
+		)
+	),
+	SendToByGroup(
+		{:vogal == "o"},
+		SendToReport(
+			Dispatch(
+				{"Overlay Plot vogal=o"},
+				"106",
+				ScaleBox( 2 ),
+				{Add Ref Line( 626, "Dashed", "Red", "F1", 1 ),
+				Add Ref Line( 1000, "Dashed", "Red", "F2", 1 )}
+			),
+			Dispatch(
+				{"Overlay Plot vogal=o"},
+				"Overlay Plot Graph",
+				FrameBox( 4 ),
+				{Frame Size( 477, 281 )}
+			)
+		)
+	),
+	SendToByGroup(
+		{:vogal == "u"},
+		SendToReport(
+			Dispatch(
+				{"Overlay Plot vogal=u"},
+				"106",
+				ScaleBox( 2 ),
+				{Add Ref Line( 344, "Dashed", "Red", "F1", 1 ),
+				Add Ref Line( 740, "Dashed", "Red", "F2", 1 )}
+			),
+			Dispatch(
+				{"Overlay Plot vogal=u"},
+				"Overlay Plot Graph",
+				FrameBox( 4 ),
+				{Frame Size( 477, 281 )}
+			)
+		)
+	)
+);
